@@ -1,4 +1,3 @@
-# Project 1: Encryption & Decryption with Visualization
 from cryptography.fernet import Fernet
 import matplotlib.pyplot as plt
 
