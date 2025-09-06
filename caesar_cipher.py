@@ -2,9 +2,6 @@
 from cryptography.fernet import Fernet
 import matplotlib.pyplot as plt
 
-# -----------------------------
-# Part 1: Caesar Cipher
-# -----------------------------
 class CaesarCipher:
     def __init__(self, shift: int):
         self.shift = shift
@@ -29,9 +26,6 @@ class CaesarCipher:
                 result += char
         return result
 
-# -----------------------------
-# Part 2: AES Encryption (Fernet)
-# -----------------------------
 class AESCipher:
     def __init__(self, key: bytes = None):
         self.key = key or Fernet.generate_key()
@@ -43,9 +37,6 @@ class AESCipher:
     def decrypt(self, encrypted_text: bytes) -> str:
         return self.cipher.decrypt(encrypted_text).decode()
 
-# -----------------------------
-# Part 3: Visualization Functions
-# -----------------------------
 def visualize_caesar(original, encrypted):
     original_chars = list(original)
     encrypted_chars = list(encrypted)
@@ -72,9 +63,6 @@ def visualize_aes(original, encrypted):
     plt.title("AES Encryption: Message Length Comparison")
     plt.show()
 
-# -----------------------------
-# Demo Execution
-# -----------------------------
 def main():
     print("=== Caesar Cipher Demo ===")
     caesar = CaesarCipher(shift=3)
